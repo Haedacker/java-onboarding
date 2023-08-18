@@ -33,8 +33,8 @@ class Problem1 {
             Max_pobi= max(cmp_left,cmp_right);
 
             cmp_plus=0; cmp_mul=1;
-            tmp_left= pobi.get(0);
-            tmp_right= pobi.get(1);
+            tmp_left= crong.get(0);
+            tmp_right= crong.get(1);
             while(tmp_left>0){
                 cmp_plus+=(tmp_left%10);
                 cmp_mul*=(tmp_left%10);
