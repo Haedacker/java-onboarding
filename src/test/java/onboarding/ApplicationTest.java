@@ -135,5 +135,82 @@ class ApplicationTest {
             List<String> result = List.of("andole", "jun", "bedi");
             assertThat(Problem7.solution(user, friends, visitors)).isEqualTo(result);
         }
+        @Test
+        void case2() {
+            String user = "mrko";
+            List<List<String>> friends = List.of(
+                    List.of("donut", "jun"),
+                    List.of("donut", "andole"),
+                    List.of("donut", "mrko"),
+                    List.of("shakevan", "jun"),
+                    List.of("shakevan", "andole"),
+                    List.of("shakevan", "mrko")
+            );
+            List<String> visitors = List.of("bedi", "bedi", "donut", "bedi", "shakevan");
+            List<String> result = List.of("andole", "jun", "bedi");
+            assertThat(Problem7.solution(user, friends, visitors)).isEqualTo(result);
+        }
+
+        @Test
+        void case3() {
+            String user = "mrko";
+            List<List<String>> friends = List.of(
+                    List.of("donut", "mrko"),
+                    List.of("shakevan", "mrko")
+            );
+            List<String> visitors = List.of("bedi", "bedi", "donut", "bedi", "shakevan");
+            List<String> result = List.of("bedi");
+            assertThat(Problem7.solution(user, friends, visitors)).isEqualTo(result);
+        }
+
+        @Test
+        void case4() {
+            String user = "mrko";
+            List<List<String>> friends = List.of(
+                    List.of("donut", "jun"),
+                    List.of("donut", "andole"),
+                    List.of("donut", "mrko"),
+                    List.of("shakevan", "jun"),
+                    List.of("shakevan", "andole"),
+                    List.of("shakevan", "mrko")
+            );
+            List<String> visitors = List.of( "shakevan");
+            List<String> result = List.of("andole", "jun");
+            assertThat(Problem7.solution(user, friends, visitors)).isEqualTo(result);
+        }
+
+        @Test
+        void case5(){
+            String user = "mrko";
+            List<List<String>> friends = List.of(
+                    List.of("donut", "jun"),
+                    List.of("donut", "andole"),
+                    List.of("donut", "mrko"),
+                    List.of("shakevan", "jun"),
+                    List.of("shakevan", "andole"),
+                    List.of("shakevan", "mrko"),
+                    List.of("mrko", "kim"),
+                    List.of("kim","jun")
+            );
+            List<String> visitors = List.of("bedi", "bedi", "donut", "bedi", "shakevan");
+            List<String> result = List.of( "jun", "andole", "bedi");
+            assertThat(Problem7.solution(user, friends, visitors)).isEqualTo(result);
+        }
+        @Test
+        void case6() {
+            String user = "mrko";
+            List<List<String>> friends = List.of(
+                    List.of("donut", "andole"),
+                    List.of("donut", "jun"),
+                    List.of("donut", "mrko"),
+                    List.of("shakevan", "andole"),
+                    List.of("shakevan", "jun"),
+                    List.of("shakevan", "mrko"),
+                    List.of("mrko", "bedi")
+            );
+            List<String> visitors = List.of("bedi", "bedi", "donut", "bedi", "shakevan");
+            List<String> result = List.of("andole", "jun");
+            assertThat(Problem7.solution(user, friends, visitors)).isEqualTo(result);
+        }
     }
 }
